@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html width:100%; height:100%; margin: 0; padding: 0;>
+  <head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+
+<h5>Heart Disease Prediction</h5>
+.sub-entry {
+    width: 50%;
+    float: left;
+}
+
+.button {
+    text-align: center;
+    padding-top: 20px;
+    clear: both;
+}
+<body width:100%; height:100%;>
+
+    
+
+ <div class="sub-entry">
+	
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="age" placeholder="Age: age in years ranging from 0 - 100" required="required" />
+      <input type="text" name="sex" placeholder="Sex: (1 = male; 0 = female)" required="required" />
+	  <input type="text" name="cp" placeholder="CP: chest pain type ranging from 0-3" required="required" />
+      <input type="text" name="trestbps" placeholder="trestbps: resting blood pressure in mm Hg ranging 0-200" required="required" />
+      <input type="text" name="chol" placeholder="chol: serum cholestoral in mg/dl 0-600" required="required" />
+      <input type="text" name="fbs" placeholder="fbs: (fasting blood sugar(1 = true; 0 = false)" required="required" />
+ </div>
+
+ <div class="sub-entry">
+      <input type="text" name="restecg" placeholder="restecg: resting blood pressure in mm Hg ranging 0-200" required="required" />
+      <input type="text" name="thalach" placeholder="thalach: maximum heart rate achieved 0-200" required="required" />
+      <input type="text" name="exang" placeholder="exang: exercise induced angina (1 = yes; 0 = no)" required="required" />
+      <input type="text" name="slope" placeholder="slope: the slope of the peak exercise ST segment 0-2" required="required" />
+      <input type="text" name="ca" placeholder="ca: number of major vessels colored by flourosopy 0-4" required="required" />
+      <input type="text" name="thal" placeholder="thal: 3 = normal; 6 = fixed defect; 7 = reversable defect 0-3" required="required" />
+ </div>
+
+ <div class="button">
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict Heart Condition</button>
+ </div>
+    </form>
+
+    {{ prediction_text }}   
+
+</body>
+</html>
+      
+ </div>
+</body>
+</html>
